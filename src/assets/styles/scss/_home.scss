@@ -1,0 +1,538 @@
+.hero_section {
+  min-height: 50dvh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .hero_text {
+    width: 100%;
+    @include centerFlex();
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    h1 {
+      color: $white;
+      margin-bottom: 0;
+      font-size: 28px;
+
+      @media screen and (max-width: 576px) {
+        font-size: 22px;
+        margin-top: 90px;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 16px;
+      margin-bottom: 0;
+      width: min(100% - 24px, 900px);
+      text-align: center;
+      margin: 0 auto;
+
+      @media screen and (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.top_destinations {
+  padding: 100px 0 80px;
+
+  @media screen and (max-width: 576px) {
+    padding: 280px 0 80px;
+  }
+  h2 {
+    color: $black;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  p {
+    color: $gray;
+    font-size: 14px;
+  }
+  .destination_card {
+    position: relative;
+    width: 100%;
+    border: 1px solid $input_stroke;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px;
+    border-radius: 24px;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+      .link {
+        background: $black;
+        color: $white;
+      }
+    }
+
+    .img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h3 {
+        font-size: 16px;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .link {
+    background: $input_bg;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: $input_hint;
+    transition: $transition;
+    @include centerFlex();
+    font-size: 12px;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    i {
+      transform: scale(-1);
+    }
+  }
+}
+
+.how_we_work_section {
+  padding: 60px 0;
+  background: $input_bg;
+
+  h3 {
+    text-align: center;
+    font-size: 28px;
+    color: $black;
+    margin-bottom: 12px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: $input_hint;
+    margin-bottom: 32px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    height: 32px;
+  }
+}
+
+.flights_filter {
+  background: $white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: $shadow;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1290px);
+  z-index: 99;
+
+  @media screen and (max-width: 576px) {
+    bottom: -232px;
+  }
+}
+
+.filter_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .flight_type {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    label {
+      cursor: pointer;
+      input {
+        display: none;
+        appearance: none;
+        &:checked + span {
+          background: $black;
+          color: $white;
+          border-color: $black;
+        }
+      }
+
+      span {
+        background: $input_bg;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        border: 1px solid $input_stroke;
+      }
+    }
+  }
+
+  .flight_specifications {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .dropdown {
+      width: 100%;
+    }
+
+    .from_to {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      min-width: 45%;
+
+      @media screen and (max-width: 576px) {
+        width: 100%;
+      }
+
+      .swap_button {
+        min-width: 32px;
+        height: 32px;
+        background: $white;
+        border-radius: 50%;
+        box-shadow: $shadow;
+        border: 1px solid $input_hint;
+        font-size: 12px;
+        color: $input_hint;
+        @include centerAbsolute();
+        z-index: 99;
+      }
+    }
+
+    .filter_btn {
+      width: 100%;
+      box-shadow: none !important;
+      background: $white;
+      border-radius: 12px;
+      color: $black;
+      cursor: pointer;
+      border: 1px solid $input_hint;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      padding: 10px 16px;
+      i {
+        color: $input_hint;
+      }
+    }
+
+    .search {
+      padding: 10px 16px;
+      color: $white;
+      background: $main;
+      box-shadow: $shadow;
+      border-radius: 12px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .travelers_menu {
+      min-width: 18rem;
+      padding: 16px;
+      z-index: 99;
+      inset: unset !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      @media screen and (max-width: 576px) {
+        .rmdp-week {
+          justify-content: unset !important;
+        }
+        .rmdp-day-picker {
+          gap: 24px;
+          flex-direction: column !important;
+        }
+      }
+
+      .travelers_menu_content {
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .section {
+        @include space-between();
+
+        h6 {
+          margin: 0;
+          font-size: 14px;
+
+          strong {
+            font-size: 10px;
+            font-weight: 400;
+            color: $input_hint;
+          }
+        }
+
+        .btns {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .btn {
+            width: 28px;
+            height: 28px;
+            background: $input_stroke;
+            border-radius: 50%;
+            color: $black;
+            font-size: 12px;
+            @include centerFlex();
+          }
+
+          .num {
+            font-size: 14px;
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .places_menu {
+      min-width: 20rem;
+      min-height: 16rem;
+      max-height: 16rem;
+      z-index: 99;
+      overflow-y: scroll;
+      scrollbar-width: 0;
+      position: relative;
+      padding: 0;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      input {
+        font-size: 14px;
+        width: 100%;
+        padding: 16px;
+        border-bottom: 1px solid $input_stroke;
+        position: sticky;
+        top: 0;
+        background: $white;
+        z-index: 99;
+      }
+
+      .places_menu_content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+
+        h6 {
+          width: 100%;
+          height: 100%;
+          font-size: 14px;
+          color: $input_hint;
+          text-align: center;
+          font-weight: 400;
+          margin: 40px 0;
+        }
+
+        .list_ariports {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          button {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: $transition;
+            padding: 12px 16px;
+            &:hover {
+              background: $input_bg;
+            }
+
+            i {
+              color: $black;
+              font-size: 18px;
+              transform: rotate(-45deg);
+            }
+
+            .content {
+              h6 {
+                margin: 0;
+                color: $black;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 4px;
+              }
+
+              p {
+                color: $input_hint;
+                font-size: 12px;
+                text-align: start;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.offers-section {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  padding: 50px 0;
+  .nav-buttons {
+    display: flex;
+    gap: 8px;
+
+    .custom-nav-btn {
+      background: rgba(255, 255, 255, 0.235);
+      color: $white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+  .discount-box {
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    .timer {
+      display: flex;
+      gap: 10px;
+
+      .time-box {
+        padding: 10px;
+        border-radius: 8px;
+        min-width: 55px;
+        text-align: center;
+        margin-top: 40px;
+
+        h4 {
+          margin: 0;
+          font-size: 26px;
+          color: #fff;
+        }
+
+        span {
+          font-size: 20px;
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  .card {
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      height: 250px;
+      object-fit: cover;
+    }
+    .card-img-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .One {
+        background-color: $main;
+        width: 40%;
+        padding: 10px;
+      }
+      .Two {
+        background-color: $black;
+        width: 40%;
+        padding: 8px;
+      }
+    }
+
+    .card-text {
+      margin-top: 10px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin: 5px 0 0;
+      font-weight: bold;
+      color: $white;
+    }
+
+    p {
+      margin: 0;
+      color: $white;
+      font-size: 14px;
+    }
+  }
+
+  button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media  (max-width: 450px) {
+  .rmdp-header,
+  .rmdp-month-name {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,111 @@
+@import "./scss/config";
+@import "./scss/layout";
+@import "./scss/auth";
+@import "./scss/form_ui";
+@import "./scss/error-page";
+
+body {
+  position: relative;
+  direction: rtl;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+  main {
+    min-height: calc(100dvh - 300px);
+    @import "./scss/home";
+    @import "./scss/contact";
+    @import "./scss/flights";
+    @import "./scss/setting";
+    @import "./scss/checkout";
+    @import "./scss/about";
+    @import "./scss/blogs";
+    @import "./scss/profile";
+  }
+
+  &.en {
+    font-family: "Outfit", sans-serif;
+    direction: ltr;
+
+    .form_ui .input-field .pass-group {
+      input {
+        border-radius: 12px 0 0 12px !important;
+        border-right: 0 !important;
+        border-left: 1px solid $input_stroke !important;
+      }
+      .show-pass {
+        border-radius: 0 12px 12px 0 !important;
+        border-left: 0 !important;
+        border-right: 1px solid $input_stroke !important;
+      }
+    }
+
+    main .top_destinations .link {
+      left: initial !important;
+      right: 16px !important;
+      i {
+        transform: scale(1) !important;
+      }
+    }
+
+    .footer h5::after {
+      background: radial-gradient(
+        90% 70% at 0% 20%,
+        $main,
+        rgba(238, 238, 238, 0)
+      );
+      left: 0 !important;
+      right: auto !important;
+    }
+
+    .auth_modal .modal_close_btn {
+      left: auto !important;
+      right: 16px !important;
+      margin-inline-start: 0 !important;
+      margin-inline-end: auto !important;
+    }
+
+    main .flights .round_trip_flight .departing_flight {
+      clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+    }
+
+    .terms-page .terms-content .term-section .section-content,
+    .privacy-policy-page
+      .privacy-policy-content
+      .privacy-policy-section
+      .section-content {
+      border-right: none;
+      border-left: 3px solid $main;
+    }
+
+    .faq_tabs .nav-item i {
+      margin-right: 8px;
+    }
+
+    main .flight_card .flight_info {
+      border-left: 0 !important;
+      border-right: 1px dashed #e9e9e9 !important;
+    }
+
+    .flight_details_modal
+      .modal-body
+      .itinerary
+      .details
+      .flight
+      .time_line
+      .stop_over {
+      margin-right: 0 !important;
+      margin-left: 52px !important;
+      border-right: 0 !important;
+      border-left: 1px dashed $input_hint !important;
+
+      span {
+        border-radius: 0 8px 8px 0 !important;
+      }
+    }
+
+    main .checkout_section .price_details_container .about_booking button i {
+      transform: scale(-1) !important;
+    }
+  }
+}

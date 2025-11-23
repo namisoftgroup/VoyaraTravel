@@ -1,0 +1,461 @@
+.my_profile {
+  padding: 60px 0;
+
+  .profile_sidebar {
+    border: 1px solid $input_stroke;
+    padding: 24px;
+    position: sticky;
+    top: 150.8px;
+    border-radius: 12px;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $input_stroke;
+
+      .avatar {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        color: $main;
+        font-size: 18px;
+        border: 1px solid $input_stroke;
+        @include centerFlex();
+        font-weight: 600;
+      }
+
+      .content {
+        h6 {
+          font-size: 18px;
+          color: $black;
+          margin-bottom: 2px;
+        }
+        span {
+          font-size: 14px;
+          color: $gray;
+        }
+      }
+    }
+
+    .nav_links {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      gap: 12px;
+
+      .nav_link {
+        padding: 12px 24px;
+        background: $input_bg;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: $black;
+        transition: 0.3s ease-in-out;
+        font-size: 14px;
+
+        &.danger {
+          color: #ff0000;
+        }
+
+        &.active {
+          background: $main10;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.wallet {
+  padding: 40px 0;
+
+  .wallet-header {
+    margin-bottom: 20px;
+  }
+
+  .wallet-balance {
+    position: relative;
+    text-align: center;
+    background: $main;
+    color: $white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+
+    .shape-left,
+    .shape-right {
+      position: absolute;
+      width: 150px;
+      transform: translateY(-50%);
+      z-index: 1;
+      @media (max-width: 576px) {
+        width: 80px;
+      }
+
+      img {
+        width: 100%;
+        filter: brightness(0) invert(1);
+        opacity: 0.5;
+      }
+    }
+
+    .shape-left {
+      top: 60%;
+      left: -70px;
+      @media (max-width: 576px) {
+        left: -30px;
+      }
+    }
+
+    .shape-right {
+      top: 30%;
+      right: -15px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .wallet-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+
+      .btn {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.3s ease;
+      }
+
+      .withdraw {
+        background: #ef5350;
+        color: $white;
+
+        &:hover {
+          background: #e53935;
+        }
+      }
+
+      .recharge {
+        background: #66bb6a;
+        color: $white;
+
+        &:hover {
+          background: #43a047;
+        }
+      }
+    }
+  }
+
+  .wallet-history {
+    h3 {
+      font-size: 20px;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .transaction {
+      background: $white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+
+      .icon {
+        font-size: 20px;
+        width: 30px;
+        text-align: center;
+        color: $gray;
+      }
+
+      .details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .top-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .type {
+            font-weight: 600;
+            color: #333;
+          }
+
+          .amount {
+            font-size: 16px;
+            font-weight: bold;
+
+            color: $black;
+          }
+        }
+
+        .bottom-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          color: #777;
+
+          .order {
+            font-style: italic;
+          }
+        }
+      }
+    }
+
+    .no-transactions {
+      text-align: center;
+      color: #999;
+      font-size: 16px;
+    }
+  }
+}
+
+.trips {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    h5 {
+      margin: 0;
+    }
+
+    .search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: $white;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      padding: 0.3rem 1rem;
+      max-width: 200px;
+
+      i {
+        color: #999;
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      input {
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        width: 100%;
+        padding: 0.4rem 0;
+        font-size: 0.9rem;
+        background: transparent;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 1.5rem;
+
+    .tab {
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+      color: $black;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: $main;
+        transition: width 0.3s ease;
+        transform: skew(-20deg) translateX(-50%);
+      }
+
+      &.active {
+        color: $main;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .trip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .trip-card {
+    background: $white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1 1 48%;
+    cursor: pointer;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+
+      i {
+        margin: 0px 10px;
+        color: $gray;
+      }
+    }
+
+    &__times {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        i {
+          color: $main;
+          font-size: 18px;
+        }
+
+        strong {
+          font-size: 17px;
+          color: #333;
+        }
+      }
+    }
+
+    &__duration {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      i {
+        font-size: 16px;
+        color: $gray;
+      }
+
+      span {
+        font-size: 12px;
+        color: #666;
+      }
+    }
+
+    &__details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #555;
+
+      i {
+        margin-right: 6px;
+        color: $gray;
+      }
+    }
+
+    &__price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+    }
+  }
+
+  .no-data {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    h6 {
+      font-size: 14px;
+      color: $black;
+    }
+    p {
+      font-size: 14px;
+      color: $gray;
+    }
+    a {
+      color: $main !important;
+      font-weight: 500 !important;
+      text-decoration: underline !important;
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .trip-card {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.personal_info {
+  border: 1px solid $input_stroke;
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+
+  h6 {
+    font-size: 14px;
+    color: $gray;
+    margin-bottom: 32px;
+  }
+}
+
+.delete_account {
+  width: fit-content;
+  padding: 12px 32px;
+  border-radius: 12px;
+  background-color: red;
+  color: $white;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
