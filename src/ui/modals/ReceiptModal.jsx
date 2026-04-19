@@ -75,7 +75,7 @@ export default function ReceiptModal({ show, setShow }) {
             <div className="header">
               <div className="logo">
                 <img src="/images/logo.svg" alt="logo" />
-                <h2>{t("receipt.al3asal")}</h2>
+                <h2>{t("receipt.voyara")}</h2>
               </div>
               <div className="contact">
                 <p>
@@ -191,7 +191,7 @@ export default function ReceiptModal({ show, setShow }) {
                   policy and, where your booking is made via a reservation
                   system provider (&quot;GDS&quot;), with its privacy policy.
                   These are available at{" "}
-                  <span>https://al3asal-travel-agency.vercel.app/privacy</span> or
+                  <span>https://voyara-travel-agency.vercel.app/privacy</span> or
                   from the carrier or GDS directly. You should read this
                   documentation, which applies to your booking and specifies,
                   for example, how your personal data is collected, stored,

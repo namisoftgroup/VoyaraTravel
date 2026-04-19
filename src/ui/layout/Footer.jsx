@@ -68,36 +68,36 @@ export default function Footer() {
               <li>
                 <i className="fas fa-map-marker-alt"></i>
                 <Link
-                  to="https://maps.app.goo.gl/7GDMHfsN3Z6BkrX47"
+                  to={`https://maps.app.goo.gl/${t("footer.address")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  4QJ4+G95، حماة، سوريا
+                 {t("footer.address")}
+                </Link>
+              </li>
+
+              <li>
+                <i className="fas fa-envelope"></i>
+                <Link to={`mailto:${t("footer.email")}`}>
+                  {t("footer.email")}
                 </Link>
               </li>
 
               <li>
                 <i className="fas fa-envelope"></i>
                 <Link to="mailto:info@voyaratravel.com">
-                  info@voyaratravel.com
-                </Link>
-              </li>
-
-              <li>
-                <i className="fas fa-envelope"></i>
-                <Link to="mailto:info@voyaratravel.com">
-                  hr@voyaratravel.com
+                  {t("footer.hr")}
                 </Link>
               </li>
 
               <li>
                 <i className="fas fa-phone-alt"></i>
-                <Link to="tel:+963735859221">+963735859221</Link>
+                <Link to={`tel:${t("footer.phone")}`}>{t("footer.phone")}</Link>
               </li>
 
               <li>
                 <i className="fab fa-whatsapp"></i>
-                <Link to="https://wa.me/963964442015">+963735859221</Link>
+                <Link to={`https://wa.me/${t("footer.whatsapp")}`}>{t("footer.whatsapp")}</Link> 
               </li>
             </ul>
           </div>
@@ -106,20 +106,20 @@ export default function Footer() {
             <div className="copyrights">
               <p>
                 &copy; {new Date().getFullYear()} {t("footer.copyright")}{" "}
-                {t("footer.al3asal")}
+                {t("footer.voyara")}
               </p>
 
               <div className="social-icons">
-                <Link to="https://www.facebook.com/groups/al3asalofficial/">
+                <Link to={`https://www.facebook.com/groups/${t("footer.facebook")}`}>
                   <i className="fab fa-facebook-f"></i>
                 </Link>
-                <Link to="#">
+                <Link to={`https://twitter.com/${t("footer.twitter")}`}>
                   <img src="/icons/twitter.svg" alt="twitter" />
                 </Link>
-                <Link to="#">
+                <Link to={`https://www.linkedin.com/company/${t("footer.linkedin")}`}>
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
-                <Link to="https://www.instagram.com/al3asalofficial/?hl=ar">
+                <Link to={`https://www.instagram.com/${t("footer.instagram")}`}>
                   <i className="fab fa-instagram"></i>
                 </Link>
               </div>

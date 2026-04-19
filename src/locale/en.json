@@ -203,7 +203,7 @@
   },
   "footer": {
     "copyright": "All rights reserved to",
-    "al3asal": "Voyara Travel",
+    "voyara": "Voyara Travel",
     "contact": "Contact us",
     "services": "Our Services",
     "ser1": "Flight ticket bookings",
@@ -411,7 +411,7 @@
     "passportIssueCountry": "Passport Issue Country"
   },
   "receipt": {
-    "al3asal": "Voyara Travel",
+    "voyara": "Voyara Travel",
     "flightNumber": "Flight Number",
     "flightDetails": "Flight Details",
     "issueDate": "Issue Date",

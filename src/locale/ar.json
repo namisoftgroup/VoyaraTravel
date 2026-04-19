@@ -203,7 +203,7 @@
   },
   "footer": {
     "copyright": "جميع الحقوق محفوظة لـ",
-    "al3asal": "Voyara Travel",
+    "voyara": "Voyara Travel",
     "contact": "اتصل بنا",
     "services": "خدماتنا",
     "ser1": "حجوزات تذاكر الطيران",
@@ -410,7 +410,7 @@
     "passportIssueCountry": "بلد إصدار الجواز"
   },
   "receipt": {
-    "al3asal": "شركة العسل للسفر والسياحة",
+    "voyara": "شركة العسل للسفر والسياحة",
     "flightNumber": "رقم الرحلة",
     "flightDetails": "تفاصيل الرحلة",
     "issueDate": "تاريخ الإصدار",
